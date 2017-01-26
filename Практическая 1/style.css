@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+nav{
+    margin-left: 25%;
+}
+H1{
+    margin-left: 25%;
+}
+H1+P{
+	margin-left: 25%;
+	padding-bottom: 2%;
+}
+button{
+	margin-left: 50%
+}
+.flinks{
+	
+	margin-left:20%;
+}
+.slinks{
+	
+	margin-left:20%;
+}
+.tinks{
+	
+	margin-left:20%;
+}
+.contacts{
+	
+	margin-left:20%;
+}

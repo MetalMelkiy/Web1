@@ -1,0 +1,63 @@
+/* Сброс всех стилей*/
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	box-sizing: border-box;
+}
+/* Для контента внутри Формы*/
+form * {
+	margin-left: 10px;
+}
+/* Для формы */
+form {
+	background-color: #f7f7f7;
+	width: 400px;
+	font-family: "Arial";
+}
+
+/* Заголовок*/
+.h2 {
+	color: #124e56;
+	padding-left: 80px;
+	background-color: radial-gradient(to right, rgba(18, 78, 86, 1), rgba(56, 106, 114, 1), rgba(18, 78, 86, 1));
+}
+/* Для линии градиент*/
+hr {
+	border : 0;
+  	height: 1px; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(14, 77, 84, 1), rgba(0, 0, 0, 0));
+    margin-bottom: 10px;
+}
+/*Для всех подписей*/
+form label {
+	color: #4a696f;
+	margin-top: 5px;
+	font-size: 12px;	
+}
+/* Для всех инпутов, кроме кнопки */
+form input:not([type="submit"]) {
+	color: #c8c8c8;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #cccacb;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	width: 350px;
+}
+/* Кнопка */
+form input.sumbit  {
+	position: relative;
+	left: 235px;
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+	background-color: #409cb5;
+	color: #ffffff;
+	height: 40px;
+	width: 85px;
+	border-radius: 5px;
+	border: 2px #fff solid;
+	  box-shadow: 0px 4px 0px 0px #cdd1d2;
+}
