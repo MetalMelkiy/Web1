@@ -12,13 +12,21 @@
  <input type="submit">
  </form>
  <?php
- $creditcardIn=$_POST['num1'].=$_POST['num2'].=$_POST['num3'].=$_POST['num4'];
-function numhide(string $creditcard){
+ //Вариант со склейкой в одну строку
+ //$creditcardIn=$_POST['num1'].=$_POST['num2'].=$_POST['num3'].=$_POST['num4'];
+
+//function numhide(string $creditcard){
 	 
 
-	echo "**** **** **** ",substr($creditcard, 12, 16);
+	//echo "**** **** **** ",substr($creditcard, 12, 16);
+//}
+//numhide($creditcardIn);
+ 
+ function numhide(string $num1, string $num2, string $num3, string $num4){
+ 		echo "**** **** **** ", $num4;
 }
-numhide($creditcardIn);
+
+numhide($_POST['num1'], $_POST['num2'], $_POST['num3'], $_POST['num4']);
 ?>
  </body>
 </html>
