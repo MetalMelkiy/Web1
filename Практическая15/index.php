@@ -16,7 +16,7 @@
 function numhide(string $creditcard){
 	 
 
-	echo "************",substr($creditcard, 12, 16);
+	echo "**** **** **** ",substr($creditcard, 12, 16);
 }
 numhide($creditcardIn);
 ?>
