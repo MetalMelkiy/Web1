@@ -2,12 +2,11 @@
     header( 'Content-Type: text/html; charset=utf-8' );
     // определяем начальные данные
     $dbHost = 'localhost';
-    $dbName = 'prakt';
+    $dbName = 'prakt16';
     $dbUsername = 'root';
-    $dbPassword = '0000';
 
     // соединяемся с сервером базы данных
-$mysqli = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
+$mysqli = mysqli_connect($dbHost, $dbUsername, '', $dbName);
 if (mysqli_connect_errno($mysqli)) {
     echo "Не удалось подключиться к MySQL: " . mysqli_connect_error();
 }
