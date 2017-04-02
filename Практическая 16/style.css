@@ -1,0 +1,83 @@
+*{
+font-family: 'Roboto Condensed', sans-serif;
+}
+*:focus{
+outline: none;
+}
+h2{
+	margin:5px;
+	color:white;
+}
+form{
+	background-color: #517f99;
+	width: 200px;
+	padding: 5px 20px;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+  margin: 5px;
+  padding: 7px;
+  width: 190px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+  background: linear-gradient(to top left, #4b6a7c, #314953);
+  color: #fff;
+}
+input[type="radio"]{
+	margin: 5px;
+}
+label{
+   color:#fff;
+}
+option{
+	color:#000;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="text"].focus,
+input[type="password"].focus,
+input[type="email"].focus {
+  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder {
+   color: #d3e2e7;
+} 
+input[type="text"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder {
+   color: #d3e2e7;
+}
+select{
+  margin: 5px;
+  padding: 7px;
+  width: 190px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+  background: linear-gradient(to top left, #4b6a7c, #314953);
+  color: #fff;
+}
+select:hover{
+  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+.ghost-button {
+  border: none;
+  background: none;
+  margin-left: 40px;
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  text-decoration: underline;
+}
+.ghost-button:hover,
+.ghost-button:active {
+  text-decoration: none;
+}
