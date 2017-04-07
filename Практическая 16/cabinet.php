@@ -1,3 +1,23 @@
+<?php
+    header( 'Content-Type: text/html; charset=utf-8' );
+    // определяем начальные данные
+    $dbHost = 'localhost';
+    $dbName = 'prakt';
+    $dbUsername = 'root';
+
+    // соединяемся с сервером базы данных
+$mysqli = mysqli_connect($dbHost, $dbUsername, '', $dbName);
+if (mysqli_connect_errno($mysqli)) {
+    die('Ошибка соединения: ' . mysqli_connect_error());
+}
+mysqli_set_charset ( $mysqli , 'utf8' );
+ $zapr=mysqli_query($mysqli,"SELECT * FROM variant3 where id_reg=\"".$_SESSION['id_reg']."\"");
+    $mailin=mysqli_fetch_array($zapr);
+
+mysqli_set_charset ( $mysqli , 'utf8' );
+//функция получения данных пользователя из базы
+mysqli_close($mysqli);
+ ?>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -6,14 +26,14 @@
 <title>Личный кабинет</title>
 </head>
 <body>
-<form action=change.php method="post">
+<form action="change.php" method="post">
 <h2>Информация о пользователе</h2>
-<label>Имя пользователя:<br> <?php echo $_COOKIE['name']?></label><br>
-<label>Фамилия пользователя:<br> <?php echo $_COOKIE['fam']?></label><br>
-<label>Отчество пользователя:<br> <?php echo $_COOKIE['tname']?></label><br>
-<label>Почта пользователя:<br> <?php echo $_COOKIE['email']?></label><br>
-<label>Учебное заведение:<br> <?php echo $_COOKIE['zaved']?></label><br>
-<label>Курс:<br> <?php echo $_COOKIE['kurs']?></label><br>
+<label>Имя пользователя:<br> <?php echo $mailin[1]?></label><br>
+<label>Фамилия пользователя:<br> <?php echo $mailin[2]?></label><br>
+<label>Отчество пользователя:<br> <?php echo $mailin[3]?></label><br>
+<label>Почта пользователя:<br> <?php echo $mailin[4]?></label><br>
+<label>Учебное заведение:<br> <?php echo $mailin[7]?></label><br>
+<label>Курс:<br> <?php echo $mailin[8]?></label><br>
 <h2>Изменить данные</h2>
 <input type="text" name="name" pattern="[A-Za-zА-Яа-яЁё0-9]{2,13}" placeholder="Имя"><br>
 <input type="text" name="fam" pattern="[A-Za-zА-Яа-яЁё]{2,16}" placeholder="Фамилия"><br>
