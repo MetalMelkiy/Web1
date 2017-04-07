@@ -2,13 +2,13 @@
     header( 'Content-Type: text/html; charset=utf-8' );
     // определяем начальные данные
     $dbHost = 'localhost';
-    $dbName = 'prakt16';
+    $dbName = 'prakt';
     $dbUsername = 'root';
 
     // соединяемся с сервером базы данных
 $mysqli = mysqli_connect($dbHost, $dbUsername, '', $dbName);
 if (mysqli_connect_errno($mysqli)) {
-    echo "Не удалось подключиться к MySQL: " . mysqli_connect_error();
+    die('Ошибка соединения: ' . mysqli_connect_error());
 }
 mysqli_set_charset ( $mysqli , 'utf8' );
 //функция проверки входящих данных POST с полями login и password на соответствие для авторизации
@@ -18,7 +18,6 @@ function auth($mysqli){
    if ($mailin[0]==mb_strtolower($_POST['login']) && $mailin[1]==$_POST['password']) {
     $zapr=mysqli_query($mysqli,"SELECT * FROM variant3 where login=\"".$_POST['login']."\"");
     $mailin=mysqli_fetch_array($zapr);
-    setcookie("id_reg", $mailin[0], time() + 3600*24);
     setcookie("name", $mailin[1], time() + 3600*24);
     setcookie("fam", $mailin[2], time() + 3600*24);
     setcookie("tname", $mailin[3], time() + 3600*24);
@@ -30,6 +29,6 @@ function auth($mysqli){
   }
    else {return 0;}
                                 }
-if (auth($mysqli)==1){mysqli_close($mysqli);header ('Location: cabinet.php');;}
+if (auth($mysqli)==1){mysqli_close($mysqli);header ('Location: cabinet.php');}
 else {echo "Введены не правильные данные";include('auth.html');}
 ?>
