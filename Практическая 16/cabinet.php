@@ -10,8 +10,10 @@ $mysqli = mysqli_connect($dbHost, $dbUsername, '', $dbName);
 if (mysqli_connect_errno($mysqli)) {
     die('Ошибка соединения: ' . mysqli_connect_error());
 }
+if (!isset($GLOBALS['login'])){global $login;}
+if(isset($_POST['login'])){$GLOBALS['login']=$_POST['login'];}
 mysqli_set_charset ( $mysqli , 'utf8' );
- $zapr=mysqli_query($mysqli,"SELECT * FROM variant3 where id_reg=\"".$_SESSION['id_reg']."\"");
+ $zapr=mysqli_query($mysqli,"SELECT * FROM variant3 where login=\"".$GLOBALS['login']."\"");
     $mailin=mysqli_fetch_array($zapr);
 
 mysqli_set_charset ( $mysqli , 'utf8' );
@@ -35,6 +37,7 @@ mysqli_close($mysqli);
 <label>Учебное заведение:<br> <?php echo $mailin[7]?></label><br>
 <label>Курс:<br> <?php echo $mailin[8]?></label><br>
 <h2>Изменить данные</h2>
+<input type="text" name="login" value="<?php echo htmlspecialchars($GLOBALS['login']) ?>" style="display: none;" readonly>
 <input type="text" name="name" pattern="[A-Za-zА-Яа-яЁё0-9]{2,13}" placeholder="Имя"><br>
 <input type="text" name="fam" pattern="[A-Za-zА-Яа-яЁё]{2,16}" placeholder="Фамилия"><br>
 <input type="text" name="tname" pattern="[A-Za-zА-Яа-яЁё]{4,16}" placeholder="Отчество""><br>
