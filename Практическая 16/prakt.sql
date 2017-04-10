@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 02 2017 г., 13:44
+-- Время создания: Апр 10 2017 г., 14:05
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 7.1.1
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `prakt`
 --
+CREATE DATABASE IF NOT EXISTS `prakt` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `prakt`;
 
 -- --------------------------------------------------------
 
@@ -46,7 +48,7 @@ INSERT INTO `variant3` (`id_reg`, `name`, `fam`, `tname`, `email`, `login`, `pas
 (1, 'Залихат', 'Уфюфыч', 'УмюйБатылов', 'zalihat666@yandex.ru', 'zalihat', 'qweASD123!@#', 'РКСИ', 3),
 (2, 'Вячеслав', 'Дуднаков', 'Витальевич', 'metalmelkiy@gmail.com', 'melkiy', 'qweASD123!@#', 'РКСИ', 3),
 (3, 'Июшмиаль', 'Кукукцапль', 'Персастряпыч', 'iyushmial666@yandex.ru', 'iyushmial', 'qweASD123!@#', 'РКСИ', 1),
-(4, 'Кирилл', 'Дуднаков', 'Витальевич', 'isdgo@mail.ru', 'isdgo', 'qweASD123!@#', 'ЮФУ', 1),
+(4, 'Кирилл', 'Дуднаков', 'Витальевич', 'isdgo@mail.ru', 'isdgo', 'qweASD123!@#', 'МГУ', 5),
 (5, 'Денис', 'Северинов', 'Алексеевич', 'den.sever@mail.ru', 'den.sever', 'QWEasd123!@#', 'РКСИ', 1),
 (6, 'Андрей', 'Цветов', 'Алексеевич', 'cvet15@aaaa', 'cvet', 'qweASD123!@#', 'РКСИ', 4),
 (7, 'Максим', 'Антонов', 'Михайлович', 'maxim@gmail.com', 'maxim', 'asdQWE123!@#', 'РКСИ', 5),
